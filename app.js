@@ -37,7 +37,7 @@ app.get('/register', (req, res) => res.render('register'));
 
 // Register route
 app.post('/register', [
-  body('email').isEmail().withMessage('Enter a valid email')
+  body('email').isEmail().withMessage('Enter a valid email'),
   body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters')
 ], (req, res) => {
   const errors = validationResult(req);
