@@ -10,7 +10,8 @@ const db = require('./db');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-
+// Set views directory (if your views are in a folder named 'views' in the root directory)
+app.set('views', path.join(__dirname, 'views'));
 // Middleware for serving static files
 app.use(express.static('public'));
 
